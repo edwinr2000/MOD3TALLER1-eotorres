@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard Administrador</title>
+</head>
+<body>
+    <h1>Panel de Administrador</h1>
+    <p>¡Bienvenido, administrador!</p>
+    
+    <h2>Listado de Perros</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Raza</th>
+                <th>Edad</th>
+                <th>Peso</th>
+                <th>Guardería</th>
+                <th>Cuidador</th>
+                <th>Última Actualización</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for perro in perros %}
+            <tr>
+                <td>{{ perro.id }}</td>
+                <td>{{ perro.nombre }}</td>
+                <td>{{ perro.raza }}</td>
+                <td>{{ perro.edad }}</td>
+                <td>{{ perro.peso }}</td>
+                <td>{{ perro.id_guarderia }}</td>
+                <td>{{ perro.id_cuidador }}</td>
+                <td>{{ perro.update }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
+</body>
+</html>

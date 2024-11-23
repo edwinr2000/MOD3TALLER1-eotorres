@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard Usuario</title>
+</head>
+<body>
+    <h1>Dashboard de Usuario</h1>
+    <p>¡Hola, {{ current_user.username }}!</p>
+    <a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
+</body>
+</html>
